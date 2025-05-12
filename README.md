@@ -72,3 +72,9 @@ El proyecto está desplegado en Netlify, utilizando:
 
 
 Se agrego _redirects para evitar el error 404 entre URLs
+---
+---
+Se agrego un formulario de contacto que se muestra a traves de una ventana modal desde el boton Contáctanos ubicado en la parte superior del navbar.
+Se utilizo Materia UI para el formulario y  <Box sx= con estilos responsive para el modal. 
+---
+
