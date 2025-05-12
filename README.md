@@ -1,12 +1,81 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🍽️ Proyecto Módulo 5 - Llamado a API de Recetas
 
-Currently, two official plugins are available:
+Este es un proyecto realizado como parte del **Módulo 5** del bootcamp de desarrollo web. El sistema permite **consultar recetas de cocina** haciendo un llamado a una API pública. Las recetas son mostradas dinámicamente en pantalla con su información correspondiente.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌐 Demo en:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🟢 Puedes ver el proyecto funcionando en:  
+👉 [https://68220fc14690e10450f78ba6--llamarapi.netlify.app/](https://68220fc14690e10450f78ba6--llamarapi.netlify.app/)
+
+---
+
+## 🔗 API utilizada
+
+El proyecto consume datos desde la API pública de [TheMealDB](https://www.themealdb.com/), usando el siguiente endpoint:
+
+```
+https://www.themealdb.com/api/json/v1/1/search.php?s=
+```
+
+Se realiza una búsqueda de recetas por nombre y se muestran los resultados con su imagen, nombre, instrucciones y otros datos relevantes.
+De las tarjetas, solo funciona el boton de agregar al carrito
+Se puede hacer una compra la cual se guarda en localStorage
+Permite ver el historial de la compra en mis compras
+---
+
+## ⚙️ Tecnologías utilizadas
+
+- **React**
+- **Vite**
+- **Material UI**
+- **Axios**
+- HTML / CSS / JS
+
+---
+
+## 🚀 Cómo ejecutar el proyecto localmente
+
+---
+---
+1. Clonar el repositorio en:
+
+
+git clone https://github.com/carlockk/proyectoModulo5.git
+cd proyectoModulo5
+
+
+2. Instalar las dependencias:
+npm install
+
+3. Ejecutar el proyecto:
+npm run dev
+
+
+4. Abrir el navegador:
+
+http://localhost:5173
+
+---
+---
+## Estructura
+
+- `/src`: Código fuente principal
+  - `App.jsx`: Componente principal
+  - `components/`: Componentes reutilizables
+  - `services/`: Lógica de llamada a la API
+- `public/`: Archivos estáticos
+- `.gitignore`: Ignora `node_modules`, `dist`, `.env`
+- `vite.config.js`: Configuración del bundler
+
+
+
+## Netlify
+
+El proyecto está desplegado en Netlify, utilizando:
+- Comando de build: `npm run build`
+- Carpeta publicada: `dist`
+
+---
