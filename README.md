@@ -55,43 +55,43 @@ http://localhost:5173 (aveces me ha tocado que me abre con otro puerto)
 ## Estructura
 
 public
-├── _redirects
-└── vite.svg
+--redirects
+--vite.svg
 
 src
-├── assets
-│
-├── components
-│   ├── ErrorBoundary.jsx
-│   ├── FormularioCompra.jsx
-│   ├── FormularioContacto.jsx
-│   ├── Layout.jsx
-│   └── NavbarComponent.jsx
-│
-├── context
-│   └── CarritoContext.jsx
-│
-├── pages
-│   ├── About.jsx
-│   ├── Carrito.jsx
-│   ├── HistorialCompras.jsx
-│   ├── Home.jsx
-│   ├── RecipeDetail.jsx
-│   └── RecipeList.jsx
-│
-├── App.css
-├── App.jsx
-├── Router.jsx
-├── index.css
-└── main.jsx
+--assets
+------react.svg
+--components
+------ErrorBoundary.jsx
+------FormularioCompra.jsx
+------FormularioContacto.jsx
+------Layout.jsx
+------NavbarComponent.jsx
 
-.gitignore  
-README.md  
-eslint.config.js  
-index.html  
-package-lock.json  
-package.json  
+--context
+------CarritoContext.jsx
+
+--pages
+------About.jsx
+------Carrito.jsx
+------HistorialCompras.jsx
+------Home.jsx
+------RecipeDetail.jsx
+------RecipeList.jsx
+
+-App.css
+-App.jsx
+-Router.jsx
+-index.css
+-main.jsx
+
+.gitignore
+eslint.config.js
+index.html
+package.-lock.json
+package.json
 vite.config.js
+
 ---
 
 ## Netlify
