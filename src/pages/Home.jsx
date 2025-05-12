@@ -17,7 +17,7 @@ const images = [
   'https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80',
   'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=80',
   'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=1600&q=80',
-  'https://images.unsplash.com/photo-1555992336-cd5fabd61c9d?auto=format&fit=crop&w=1600&q=80'
+  'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1600&q=80'
 ];
 
 const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
