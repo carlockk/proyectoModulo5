@@ -20,32 +20,28 @@ El proyecto consume datos desde la API pública de [TheMealDB](https://www.theme
 https://www.themealdb.com/api/json/v1/1/search.php?s=
 ```
 
-Se realiza una búsqueda de recetas por nombre y se muestran los resultados con su imagen, nombre, instrucciones y otros datos relevantes.
+Se muestran las recetas llamadas desde la API con su imagen, nombre, instrucciones y abre un modal con todos los datos de cada receta.
 De las tarjetas, solo funciona el boton de agregar al carrito
 Se puede hacer una compra la cual se guarda en localStorage
 Permite ver el historial de la compra en mis compras
 ---
 
-## ⚙️ Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - **React**
 - **Vite**
 - **Material UI**
 - **Axios**
 - HTML / CSS / JS
-
+- skeleton
 ---
 
-## 🚀 Cómo ejecutar el proyecto localmente
+## Cómo ejecutar el proyecto localmente
 
----
----
 1. Clonar el repositorio en:
-
 
 git clone https://github.com/carlockk/proyectoModulo5.git
 cd proyectoModulo5
-
 
 2. Instalar las dependencias:
 npm install
@@ -53,12 +49,9 @@ npm install
 3. Ejecutar el proyecto:
 npm run dev
 
-
 4. Abrir el navegador:
-
 http://localhost:5173
 
----
 ---
 ## Estructura
 
@@ -69,13 +62,10 @@ http://localhost:5173
 - `public/`: Archivos estáticos
 - `.gitignore`: Ignora `node_modules`, `dist`, `.env`
 - `vite.config.js`: Configuración del bundler
-
-
+---
 
 ## Netlify
 
 El proyecto está desplegado en Netlify, utilizando:
 - Comando de build: `npm run build`
 - Carpeta publicada: `dist`
-
----
