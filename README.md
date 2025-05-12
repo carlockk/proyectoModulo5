@@ -25,11 +25,10 @@ El proyecto consume datos desde la API pública de [TheMealDB](https://www.theme
 ```
 https://www.themealdb.com/api/json/v1/1/search.php?s=
 ```
-
-Se muestran las recetas llamadas desde la API con su imagen, nombre, instrucciones y abre un modal con todos los datos de cada receta.
-De las tarjetas, solo funciona el boton de agregar al carrito
-Se puede hacer una compra la cual se guarda en localStorage
-Permite ver el historial de la compra en mis compras
+Es un sitio web que muestra un Home con un slider de imágenes deslizantes, unas tarjetas con productos destacados, un sobre nosotros, un historial de compra que funciona, un carrito de compra que recibe las recetas y se puede finalizar la compra pudiendo revisar en mis compras el historial.
+Se muestran las recetas en productos y son llamadas desde la API con su imagen, nombre, instrucciones y abre un modal con todos los datos de cada receta.
+De las tarjetas, solo funciona el boton de agregar al carrito, los otros 2 iconos son de adorno.
+La compra la cual se guarda en localStorage
 ---
 
 ## Tecnologías utilizadas
