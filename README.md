@@ -5,8 +5,15 @@ Este es un proyecto realizado como parte del **Módulo 5** del bootcamp de desar
 
 ---
 
-## Puede ver el proyecto en:
- 
+## Puede ver el proyecto en Netlify
+
+El proyecto se despliega utilizando:
+- Comando de build: `npm run build`
+- Carpeta publicada: `dist`
+
+Se agrego _redirects para evitar el error 404 entre URLs
+
+URL:
 [https://68220fc14690e10450f78ba6--llamarapi.netlify.app/](https://llamarapi.netlify.app/)
 
 ---
@@ -90,16 +97,6 @@ index.html
 package-lock.json  
 ---
 ```
-
-## Netlify
-
-El proyecto está desplegado en Netlify, utilizando:
-- Comando de build: `npm run build`
-- Carpeta publicada: `dist`
-
-
-Se agrego _redirects para evitar el error 404 entre URLs
----
 ---
 Se agrego un formulario de contacto que se muestra a traves de una ventana modal desde el boton Contáctanos ubicado en la parte superior del navbar.
 Se utilizo Material UI para el formulario y  <Box sx= con estilos responsive para el modal.
