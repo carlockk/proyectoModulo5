@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { CarritoContext } from '../context/CarritoContext'; // agregado para habilitar el botón de agregar al carrito
+
 import {
   Container,
   Typography,
@@ -9,9 +11,11 @@ import {
   IconButton,
   CircularProgress
 } from '@mui/material';
+
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import InfoIcon from '@mui/icons-material/Info';
 import StarIcon from '@mui/icons-material/Star';
+
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -26,6 +30,8 @@ const images = [
 const API_URL = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
 
 export default function Home() {
+  const { agregarAlCarrito } = useContext(CarritoContext); // ✅ Agregado para poder usar la función
+
   const [destacados, setDestacados] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -53,7 +59,7 @@ export default function Home() {
 
   return (
     <>
-      {/* SLIDER */}
+      {/* SLIDER de imágenes con 4 imágenes funcionales */}
       <Box sx={{ width: '100%', overflow: 'hidden', mt: 0, px: 0 }}>
         <Slider {...sliderSettings}>
           {images.map((img, i) => (
@@ -73,84 +79,48 @@ export default function Home() {
         </Slider>
       </Box>
 
-      {/* CONTENIDO */}
+      {/* Sección de productos destacados */}
       <Container sx={{ py: 5 }}>
-        {/* MAPA */}
-        <Box sx={{ mb: 5 }}>
-          <Typography variant="h5" gutterBottom>¿Dónde estamos?</Typography>
-          <Box sx={{ border: '1px solid #999999', borderRadius: 2, overflow: 'hidden' }}>
-            <iframe
-              title="Mapa"
-              src="https://maps.google.com/maps?q=Ohiggins%20430b,%20Copiapó,%20Chile&t=&z=17&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-          </Box>
-        </Box>
-
-        {/* DESTACADOS */}
-        <Typography variant="h5" gutterBottom>Platos Destacados</Typography>
+        <Typography variant="h5" gutterBottom>🛒 Más Vendidos</Typography>
 
         {loading ? (
-          <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
-            <CircularProgress />
-          </Box>
+          <CircularProgress />
         ) : (
           <Box
-            sx={{
-              display: 'flex',
-              gap: 2,
-              overflowX: 'auto',
-              py: 2,
-              px: 1,
-              scrollbarWidth: 'none',
-              '&::-webkit-scrollbar': { display: 'none' }
-            }}
+            display="grid"
+            gridTemplateColumns="repeat(auto-fill, minmax(280px, 1fr))"
+            gap={3}
           >
             {destacados.map((meal) => (
               <Card
                 key={meal.idMeal}
                 sx={{
-                  minWidth: 220,
-                  maxWidth: 220,
-                  flex: '0 0 auto',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  boxShadow: 3,
-                  borderRadius: 3
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  '&:hover': { transform: 'scale(1.03)', boxShadow: 6 } // ✅ Animación suave al pasar el mouse
                 }}
               >
                 <CardMedia
                   component="img"
+                  height="160"
                   image={meal.strMealThumb}
                   alt={meal.strMeal}
-                  sx={{ height: 140, objectFit: 'cover' }}
                 />
                 <CardContent>
-                  <Typography variant="subtitle1" fontWeight="bold" noWrap>
+                  <Typography variant="h6" gutterBottom>
                     {meal.strMeal}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis'
-                    }}
-                  >
-                    {meal.strInstructions.split(' ').slice(0, 15).join(' ')}...
-                  </Typography>
+                  <Box display="flex" justifyContent="space-between">
+                    <IconButton onClick={() => agregarAlCarrito(meal)}> {/* ✅ Funcionalidad agregada */}
+                      <ShoppingCartIcon />
+                    </IconButton>
+                    <IconButton href={`/detalle/${meal.idMeal}`}>
+                      <InfoIcon />
+                    </IconButton>
+                    <IconButton disabled>
+                      <StarIcon sx={{ color: '#FFD700' }} />
+                    </IconButton>
+                  </Box>
                 </CardContent>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', px: 2, pb: 1 }}>
-                  <IconButton color="primary"><ShoppingCartIcon /></IconButton>
-                  <IconButton color="secondary"><InfoIcon /></IconButton>
-                  <IconButton color="warning"><StarIcon /></IconButton>
-                </Box>
               </Card>
             ))}
           </Box>
