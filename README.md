@@ -1,18 +1,18 @@
 
-# 🍽️ Proyecto Módulo 5 - Llamado a API de Recetas
+# Proyecto Módulo 5 - LlamarAPI
 
 Este es un proyecto realizado como parte del **Módulo 5** del bootcamp de desarrollo web. El sistema permite **consultar recetas de cocina** haciendo un llamado a una API pública. Las recetas son mostradas dinámicamente en pantalla con su información correspondiente.
 
 ---
 
-## 🌐 Demo en:
+## Demo en:
 
-🟢 Puede ver el proyecto en:  
-👉 [https://68220fc14690e10450f78ba6--llamarapi.netlify.app/](https://68220fc14690e10450f78ba6--llamarapi.netlify.app/)
+Puede ver el proyecto en:  
+https://68220fc14690e10450f78ba6--llamarapi.netlify.app/
 
 ---
 
-## 🔗 API utilizada
+## API utilizada
 
 El proyecto consume datos desde la API pública de [TheMealDB](https://www.themealdb.com/), usando el siguiente endpoint:
 
