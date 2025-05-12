@@ -5,9 +5,8 @@ Este es un proyecto realizado como parte del **Módulo 5** del bootcamp de desar
 
 ---
 
-## Demo en:
-
-Puede ver el proyecto en:  
+## Puede ver el proyecto en:
+ 
 [https://68220fc14690e10450f78ba6--llamarapi.netlify.app/](https://llamarapi.netlify.app/)
 
 ---
@@ -36,7 +35,7 @@ Permite ver el historial de la compra en mis compras
 - skeleton
 ---
 
-## Cómo ejecutar el proyecto localmente
+## puede ver el proyecto de manera local:
 
 1. Clonar el repositorio en:
 
@@ -50,18 +49,50 @@ npm install
 npm run dev
 
 4. Abrir el navegador:
-http://localhost:5173
+http://localhost:5173 (aveces me ha tocado que me abre con otro puerto)
 
 ---
 ## Estructura
 
-- `/src`: Código fuente principal
-  - `App.jsx`: Componente principal
-  - `components/`: Componentes reutilizables
-  - `services/`: Lógica de llamada a la API
-- `public/`: Archivos estáticos
-- `.gitignore`: Ignora `node_modules`, `dist`, `.env`
-- `vite.config.js`: Configuración del bundler
+public
+├── _redirects
+└── vite.svg
+
+src
+├── assets
+│
+├── components
+│   ├── ErrorBoundary.jsx
+│   ├── FormularioCompra.jsx
+│   ├── FormularioContacto.jsx
+│   ├── Layout.jsx
+│   └── NavbarComponent.jsx
+│
+├── context
+│   └── CarritoContext.jsx
+│
+├── pages
+│   ├── About.jsx
+│   ├── Carrito.jsx
+│   ├── HistorialCompras.jsx
+│   ├── Home.jsx
+│   ├── RecipeDetail.jsx
+│   └── RecipeList.jsx
+│
+├── App.css
+├── App.jsx
+├── Router.jsx
+├── index.css
+└── main.jsx
+
+.gitignore  
+README.md  
+eslint.config.js  
+index.html  
+package-lock.json  
+package.json  
+vite.config.js
+
 ---
 
 ## Netlify
@@ -75,6 +106,7 @@ Se agrego _redirects para evitar el error 404 entre URLs
 ---
 ---
 Se agrego un formulario de contacto que se muestra a traves de una ventana modal desde el boton Contáctanos ubicado en la parte superior del navbar.
-Se utilizo Materia UI para el formulario y  <Box sx= con estilos responsive para el modal. 
+Se utilizo Material UI para el formulario y  <Box sx= con estilos responsive para el modal.
+El boton enviar no funciona, es solo visual
 ---
 
