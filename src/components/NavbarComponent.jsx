@@ -13,7 +13,8 @@ import {
   useTheme,
   useMediaQuery,
   Badge,
-  Link
+  Link,
+  Modal
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -26,6 +27,9 @@ import GavelIcon from '@mui/icons-material/Gavel';
 import EmailIcon from '@mui/icons-material/Email';
 import EventIcon from '@mui/icons-material/Event';
 
+// Formulario
+import FormularioContacto from './FormularioContacto';
+
 const pages = [
   { name: 'HOME', path: '/' },
   { name: 'SOBRE NOSOTROS', path: '/about' },
@@ -33,19 +37,21 @@ const pages = [
   { name: 'MIS COMPRAS', path: '/mis-compras' }
 ];
 
-const infoLinks = [
-  { name: 'Datos de transferencia', href: '#', icon: <AccountBalanceIcon fontSize="small" /> },
-  { name: 'Políticas de compra', href: '#', icon: <GavelIcon fontSize="small" /> },
-  { name: 'Contáctanos', href: '#', icon: <EmailIcon fontSize="small" /> },
-  { name: 'Carrito de eventos', href: '#', icon: <EventIcon fontSize="small" /> }
-];
-
 export default function NavbarComponent() {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const [modalOpen, setModalOpen] = React.useState(false);
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const { carrito } = useCarrito();
   const totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+
+  const infoLinks = [
+    { name: 'Datos de transferencia', href: '#', icon: <AccountBalanceIcon fontSize="small" /> },
+    { name: 'Políticas de compra', href: '#', icon: <GavelIcon fontSize="small" /> },
+    { name: 'Contáctanos', onClick: () => setModalOpen(true), icon: <EmailIcon fontSize="small" /> },
+    { name: 'Carrito de eventos', href: '#', icon: <EventIcon fontSize="small" /> }
+  ];
 
   return (
     <>
@@ -64,10 +70,11 @@ export default function NavbarComponent() {
             {infoLinks.map((link) => (
               <Link
                 key={link.name}
-                href={link.href}
+                href={link.href || '#'}
                 underline="hover"
                 color="inherit"
-                sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}
+                onClick={link.onClick || undefined}
+                sx={{ display: 'flex', alignItems: 'center', gap: 0.5, cursor: 'pointer' }}
               >
                 {link.icon}
                 {link.name}
@@ -147,8 +154,9 @@ export default function NavbarComponent() {
                       <ListItem
                         button
                         key={link.name}
-                        component="a"
-                        href={link.href}
+                        component={link.href ? 'a' : 'button'}
+                        href={link.href || undefined}
+                        onClick={link.onClick || undefined}
                         sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
                       >
                         {link.icon}
@@ -180,6 +188,20 @@ export default function NavbarComponent() {
           )}
         </Toolbar>
       </AppBar>
+
+      {/* Modal del formulario de contacto */}
+      <Modal open={modalOpen} onClose={() => setModalOpen(false)}>
+        <Box
+          sx={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+          }}
+        >
+          <FormularioContacto />
+        </Box>
+      </Modal>
     </>
   );
 }
