@@ -109,17 +109,6 @@ export default function Home() {
                   <Typography variant="h6" gutterBottom>
                     {meal.strMeal}
                   </Typography>
-                  <Box display="flex" justifyContent="space-between">
-                    <IconButton onClick={() => agregarAlCarrito(meal)}> {/* ✅ Funcionalidad agregada */}
-                      <ShoppingCartIcon />
-                    </IconButton>
-                    <IconButton href={`/detalle/${meal.idMeal}`}>
-                      <InfoIcon />
-                    </IconButton>
-                    <IconButton disabled>
-                      <StarIcon sx={{ color: '#FFD700' }} />
-                    </IconButton>
-                  </Box>
                 </CardContent>
               </Card>
             ))}
