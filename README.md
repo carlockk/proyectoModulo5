@@ -69,3 +69,6 @@ http://localhost:5173
 El proyecto está desplegado en Netlify, utilizando:
 - Comando de build: `npm run build`
 - Carpeta publicada: `dist`
+
+
+Se agrego _redirects para evitar el error 404 entre URLs
