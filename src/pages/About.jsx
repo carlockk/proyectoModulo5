@@ -43,7 +43,7 @@ export default function About() {
         Con el tiempo hemos adaptado el servicio a las necesidades actuales y hemos creado productos nuevos que tanto nosotros como el resto esperamos que sean de su total agrado.
         Siempre innovando y probando nuevas recetas, trataremos de hacer lo mejor posible por y para ustedes.
         <br /><br />
-        <em>Coffee Waffles &copy; {new Date().getFullYear()} - Todos los derechos reservados.</em>
+        <em>Coffee Waffles &copy; {new Date().getFullYear()}.</em>
       </Typography>
     </Container>
   );
