@@ -54,42 +54,40 @@ http://localhost:5173 (aveces me ha tocado que me abre con otro puerto)
 ---
 ## Estructura
 
-public
---redirects
---vite.svg
+public --redirects --vite.svg
 
-src
---assets
-------react.svg
---components
-------ErrorBoundary.jsx
-------FormularioCompra.jsx
-------FormularioContacto.jsx
-------Layout.jsx
+src 
+--assets 
+------react.svg 
+--components 
+------ErrorBoundary.jsx 
+------FormularioCompra.jsx 
+------FormularioContacto.jsx 
+------Layout.jsx 
 ------NavbarComponent.jsx
 
---context
+--context 
 ------CarritoContext.jsx
 
---pages
-------About.jsx
-------Carrito.jsx
-------HistorialCompras.jsx
-------Home.jsx
-------RecipeDetail.jsx
+--pages 
+------About.jsx 
+------Carrito.jsx 
+------HistorialCompras.jsx 
+------Home.jsx 
+------RecipeDetail.jsx 
 ------RecipeList.jsx
 
--App.css
--App.jsx
--Router.jsx
--index.css
+-App.css 
+-App.jsx 
+-Router.jsx 
+-index.css 
 -main.jsx
 
-.gitignore
-eslint.config.js
-index.html
-package.-lock.json
-package.json
+.gitignore 
+eslint.config.js 
+index.html 
+package-lock.json 
+package.json 
 vite.config.js
 
 ---
